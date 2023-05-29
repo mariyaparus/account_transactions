@@ -124,6 +124,11 @@ def test_read_file():
     assert read_file(file_path) == expected_result
 
 
+def test_file_not_found():
+    with pytest.raises(FileNotFoundError):
+        read_file('test_file_not_found.json')
+
+
 def test_show_last_operations(data):
     assert show_last_operations(
         data) == '26.08.2019 Перевод организации\nMaestro 1596 83** **** 5199 -> Счет **9589\n31957.58 руб.\n'
